@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-4 mb-4" *ngFor="let cardInfo of cardInfos; index as i">
+    <div class="card">
+      <img src="../assets/imgs/card-bc.png" class="card-img-top" alt="" />
+      <div class="card-body">
+        <h5 class="card-title">Product title {{ i + 1 }}</h5>
+        <p class="card-text">
+          {{ cardInfo.text }}
+        </p>
+        <div class="d-flex justify-content-between align-items-center">
+          <button
+            class="btn btn-outline-danger delete-button"
+            (click)="removeFromCart(i)"
+            *ngIf="cardInfo.added"
+          >
+            Delete
+          </button>
+
+          <button
+            class="btn btn-outline-primary add-button"
+            (click)="addToCart(i)"
+            *ngIf="!cardInfo.added"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
