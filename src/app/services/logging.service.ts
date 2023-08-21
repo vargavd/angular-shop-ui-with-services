@@ -1,3 +1,5 @@
+import { Injectable } from "@angular/core";
+
 export class LoggingService {
   logItems: {
     message: string, 

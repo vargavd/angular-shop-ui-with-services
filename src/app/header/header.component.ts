@@ -15,18 +15,13 @@ export class HeaderComponent implements OnInit {
   // EVENTS
   clickOnSignIn() {
     this.accountManagementService.login();
-    
-    this.loggingService.addToLog('Signing In');
   }
   clickOnSignOut() {
     this.accountManagementService.logout();
-
-    this.loggingService.addToLog('Signing Out');
   }
 
   // CONSTRUCTOR + INJECTED PROPERTIEs
   constructor(
-    private loggingService: LoggingService,
     private accountManagementService: AccountManagementService,
     private cartService: CartService
   ) {
